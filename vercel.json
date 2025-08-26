@@ -1,18 +1,17 @@
 {
   "version": 2,
-  "public": true,
+  "cleanUrls": true,
+  "trailingSlash": false,
   "builds": [
-    { "src": "Public/**", "use": "@vercel/static" }
+    { "src": "Public/**/*", "use": "@vercel/static" }
   ],
   "routes": [
-    
     { "src": "^/$", "dest": "/Public/index.html" },
-
-    
-    { "src": "^/(.*)\\.html$", "dest": "/Public/$1.html" },
-    { "src": "^/(.*)$", "dest": "/Public/$1.html" },
-
-    
-    { "src": "/(.*)", "dest": "/Public/$1" }
+    { "src": "^/(.*)/$", "dest": "/Public/$1/index.html" },
+    {
+      "src": "^/(.*)\\.(css|mjs|js|map|png|jpg|jpeg|gif|svg|webp|ico|txt|json|xml|pdf|mp4|webm|ogg|mp3|wav|woff2?|ttf|eot)$",
+      "dest": "/Public/$1.$2"
+    },
+    { "src": "^/(.*)$", "dest": "/Public/$1.html" }
   ]
 }
