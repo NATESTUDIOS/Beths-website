@@ -5,14 +5,14 @@
     { "src": "public/**", "use": "@vercel/static" }
   ],
   "routes": [
-    // Always serve index.html for the root
+    
     { "src": "^/$", "dest": "/public/index.html" },
 
-    // Clean URLs: remove .html extension
+    
     { "src": "^/(.*)\\.html$", "dest": "/public/$1.html" },
     { "src": "^/(.*)$", "dest": "/public/$1.html" },
 
-    // Fallback: serve assets normally
+    
     { "src": "/(.*)", "dest": "/public/$1" }
   ]
 }
