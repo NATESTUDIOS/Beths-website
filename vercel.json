@@ -2,17 +2,17 @@
   "version": 2,
   "public": true,
   "builds": [
-    { "src": "public/**", "use": "@vercel/static" }
+    { "src": "Public/**", "use": "@vercel/static" }
   ],
   "routes": [
     
-    { "src": "^/$", "dest": "/public/index.html" },
+    { "src": "^/$", "dest": "/Public/index.html" },
 
     
-    { "src": "^/(.*)\\.html$", "dest": "/public/$1.html" },
-    { "src": "^/(.*)$", "dest": "/public/$1.html" },
+    { "src": "^/(.*)\\.html$", "dest": "/Public/$1.html" },
+    { "src": "^/(.*)$", "dest": "/Public/$1.html" },
 
     
-    { "src": "/(.*)", "dest": "/public/$1" }
+    { "src": "/(.*)", "dest": "/Public/$1" }
   ]
 }
